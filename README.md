@@ -128,11 +128,11 @@ Introduced service classes (e.g., `PageService`) for separation of business logi
 
 - app/Http/Controllers/API/Auth/
 
-- LoginController.php
+	- LoginController.php
 
 - app/Http/Controllers/AP/
 
-- PageController.php
+	- PageController.php
 
 - app/Enums/SectionType.php
 
@@ -142,41 +142,41 @@ Introduced service classes (e.g., `PageService`) for separation of business logi
 
 - frontend/
 
-- components/
+	- components/
 
-- Login.vue
+		- Login.vue
+	
+		- PageList.vue
+	
+		- PageEditor.vue
 
-- PageList.vue
+	- components/layouts
 
-- PageEditor.vue
-
-- components/layouts
-
-- AdminLayout.vue
-
-- LoginLayout.vue
+		- AdminLayout.vue
+		
+		- LoginLayout.vue
 
 - views/
 
-- Home.vue
-
-- Login.vue
-
-- Page.vue.
-
-- PageCreate.vue
-
-- PageEdit.vue
+	- Home.vue
+	
+	- Login.vue
+	
+	- Page.vue.
+	
+	- PageCreate.vue
+	
+	- PageEdit.vue
 
 - router/
 
-- index.js
+	- index.js
 
 - store/
 
-- auth.js
-
-- page.js
+	- auth.js
+	
+	- page.js
 
 ---
 
@@ -188,7 +188,7 @@ Introduced service classes (e.g., `PageService`) for separation of business logi
 **Make sure you have installed:**
 
 -   PHP ≥ 8.2
- -   Composer
+-   Composer
 -   Node.js ≥ 18.x
 -   npm or yarn
 -   MySQL / PostgreSQL
@@ -205,25 +205,60 @@ cd  mini-website-builder
 
 ### Backend (Laravel)
 
-```bash
-
-cd  backend
-
-composer  install
-
-cp  .env.example  .env
-
-php  artisan  key:generate
-
-php  artisan  migrate  --seed
-
-php  artisan  storage:link
-
-  
-
-php  artisan  serve
+##### Step 1: Navigate to your backend folder
 
 ```
+
+cd backend
+```
+#### Step 2: Install PHP dependencies with Composer
+
+```
+composer install
+```
+##### Step 3: Create the environment file
+
+```
+cp .env.example .env
+```
+##### Step 4: Configure the database connection
+
+Open `.env` in a text editor and update the database settings, for example:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_user
+DB_PASSWORD=your_database_password
+
+Replace these with your actual database credentials.
+```
+----------
+
+##### Step 5: Generate application key
+
+```
+php artisan key:generate
+```
+#### Step 6: Run migrations and seed the database
+
+```
+php artisan migrate --seed
+```
+#### Step 7: Create symbolic link for storage
+
+```
+
+php artisan storage:link
+```
+#### Step 8: Serve the application
+
+```
+php artisan serve
+```
+
 
 ### Frontend (Vue 3)
 
