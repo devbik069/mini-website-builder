@@ -5,7 +5,7 @@ import { createPinia } from 'pinia';
 import axios from 'axios';
 import './assets/main.css'; 
 
-axios.defaults.baseURL = 'http://localhost:8000'; 
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const app = createApp(App);
 app.use(createPinia());
