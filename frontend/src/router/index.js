@@ -10,7 +10,10 @@ import axios from "axios";
 
 // Define the route configuration
 const routes = [
-  { path: "/admin", name: "Home", component: Home },
+  { path: "/admin", 
+        meta: { requiresAuth: true },
+
+    name: "Home", component: Home },
   { path: "/", redirect: "/login" },
 
   { path: "/login", name: "Login", component: Login },
