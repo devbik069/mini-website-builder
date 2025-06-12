@@ -273,7 +273,13 @@ npm  run  dev
 ```
 
 ---
+### Login Credentials 
 
+```
+admin@example.com
+password
+```
+---
 ### ✅ Testing
 
 - Unit tests for `PageService` methods.
